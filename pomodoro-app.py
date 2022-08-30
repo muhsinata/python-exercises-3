@@ -9,16 +9,17 @@ FONT_NAME = "Courier"
 WORK_MIN = 25
 SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
+reps = 0
 
 
 def start_timer():
 
     global reps
-    reps + 1
+    reps = reps + 1
 
     if reps % 2 == 1:
         count_down(WORK_MIN * 60)
-    elif reps % 8:
+    elif reps % 8 == 0:
         count_down(LONG_BREAK_MIN * 60)
     else:
         count_down(SHORT_BREAK_MIN * 60)
@@ -35,6 +36,8 @@ def count_down(count):
     canvas.itemconfig(timer_text, text=f"{count_min}:{count_sec}")
     if count > 0:
         window.after(1000, count_down, count - 1)
+    else:
+        start_timer()
 
 
 window = Tk()
