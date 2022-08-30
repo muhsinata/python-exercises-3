@@ -12,7 +12,16 @@ LONG_BREAK_MIN = 20
 
 
 def start_timer():
-    count_down(10)
+
+    global reps
+    reps + 1
+
+    if reps % 2 == 1:
+        count_down(WORK_MIN * 60)
+    elif reps % 8:
+        count_down(LONG_BREAK_MIN * 60)
+    else:
+        count_down(SHORT_BREAK_MIN * 60)
 
 
 def count_down(count):
