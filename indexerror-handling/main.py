@@ -1,3 +1,5 @@
+#################################### EXERCISE-1 ############################
+
 """ fruits = ["Apple", "Pear", "Orange"]
 
 
@@ -12,6 +14,7 @@ def make_pie(index):
 
 make_pie(2) """
 
+#################################### EXERCISE-2 ############################
 
 facebook_posts = [
     {'Likes': 21, 'Comments': 2}, 
@@ -25,7 +28,9 @@ facebook_posts = [
 total_likes = 0
 
 for post in facebook_posts:
-    total_likes = total_likes + post['Likes']
-
+    try:
+        total_likes = total_likes + post['Likes']
+    except:
+        pass
 
 print(total_likes)
