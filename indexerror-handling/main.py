@@ -16,7 +16,7 @@ make_pie(2) """
 
 #################################### EXERCISE-2 ############################
 
-facebook_posts = [
+""" facebook_posts = [
     {'Likes': 21, 'Comments': 2}, 
     {'Likes': 13, 'Comments': 2, 'Shares': 1}, 
     {'Likes': 33, 'Comments': 8, 'Shares': 3}, 
@@ -33,4 +33,16 @@ for post in facebook_posts:
     except KeyError:
         pass
 
-print(total_likes)
+print(total_likes) """
+
+#################################### EXERCISE-3 ############################
+
+import pandas
+
+data = pandas.read_csv("nato_phonetic_alphabet.csv")
+phonetic_dict = {row.letter: row.code for (index, row) in data.iterrows()}
+print(phonetic_dict)
+
+word = input("Enter a word: ").upper()
+output_list = [phonetic_dict[letter] for letter in word]
+print(output_list)
